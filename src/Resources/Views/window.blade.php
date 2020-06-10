@@ -1,5 +1,5 @@
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Inconsolata:300,700);
+    @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
     #webartisan__window {
         position: fixed;
         bottom: 0;
@@ -14,7 +14,7 @@
         font: 16px/1.6 'Inconsolata', monospace;
         overflow-y: auto;
         cursor: text;
-        font-weight: 300;
+        font-weight: 400;
         z-index: 9999999999999999;
     }
     #webartisan__window::-webkit-scrollbar {

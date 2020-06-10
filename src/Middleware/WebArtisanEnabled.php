@@ -4,6 +4,7 @@ namespace Micheledamo\LaravelWebArtisan\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Micheledamo\LaravelWebArtisan\LaravelWebArtisan;
 
 class WebArtisanEnabled
@@ -28,14 +29,14 @@ class WebArtisanEnabled
     /**
      * Handle an incoming request.
      *
-     * @param  Request  $request
-     * @param  Closure  $next
-     * @return mixed
+     * @param $request
+     * @param Closure $next
+     * @return Response|mixed
      */
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-        if ($this->webartisan->isEnabled() and $request->url() != asset(config('webartisan.route_prefix').'/run')) {
+        if ($response instanceof Response and $this->webartisan->isEnabled() and $request->url() != asset(config('webartisan.route_prefix').'/run')) {
             try {
                 $response->getContent();
             }
