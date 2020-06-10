@@ -22,8 +22,10 @@
         }
     ],
     "require": {
-        "php" : ">=7.2",
-        "laravel/framework": ">=5.8"
+        "php" : ">=7.2"
+    },
+    "require-dev": {
+        "laravel/framework": ">=5.8.*"
     },
     "autoload": {
         "psr-4": {
@@ -43,9 +45,16 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "micheledamo\\laravel-web-artisan\\LaravelWebArtisanServiceProvider"
+            ]
         }
     },
     "config": {
         "sort-packages": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
