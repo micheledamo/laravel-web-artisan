@@ -1,0 +1,56 @@
+{
+    "name": "micheledamo/laravel-web-artisan",
+    "type": "library",
+    "description": "This package allows you to execute artisan commands in a simple way using the browser window. If you don't have SSH access to the hosting platform where your Laravel site is hosted, this solution allows you to run commands like \"php artisan migrate\".",
+    "keywords": [
+        "Michele Damo",
+        "micheledamo",
+        "laravel-web-artisan",
+        "Laravel Web Atisan",
+        "Artisan",
+        "Artisan Commands",
+        "Laravel"
+    ],
+    "homepage": "https://github.com/micheledamo/laravel-web-artisan",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michele Damo",
+            "email": "hello@micheledamo.com",
+            "homepage": "www.micheledamo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : ">=7.1.3",
+        "laravel/framework": ">=5.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=8.0",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "micheledamo\\laravel-web-artisan\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "micheledamo\\laravel-web-artisan\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
