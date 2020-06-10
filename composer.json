@@ -1,6 +1,6 @@
 {
     "name": "micheledamo/laravel-web-artisan",
-    "type": "library",
+    "type": "package",
     "description": "This package allows you to execute artisan commands in a simple way using the browser window. If you don't have SSH access to the hosting platform where your Laravel site is hosted, this solution allows you to run commands like \"php artisan migrate\".",
     "keywords": [
         "Michele Damo",
