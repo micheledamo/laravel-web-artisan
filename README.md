@@ -11,7 +11,7 @@ This package allows you to execute Artisan commands in a simple way using the br
 
 > This package requires Laravel 5.8 or higher.
 
-![Preview](images/preview.jpg?raw=true "Preview")
+![Preview](images/laravel-web-artisan-preview.jpg?raw=true "Preview")
 
 ## Installation
 
