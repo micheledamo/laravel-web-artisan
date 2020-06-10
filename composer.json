@@ -48,7 +48,7 @@
         },
         "laravel": {
             "providers": [
-                "micheledamo\\laravel-web-artisan\\LaravelWebArtisanServiceProvider"
+                "Micheledamo\\LaravelWebArtisan\\LaravelWebArtisanServiceProvider"
             ]
         }
     },
