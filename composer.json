@@ -31,12 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "micheledamo\\laravel-web-artisan\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "micheledamo\\laravel-web-artisan\\": "tests"
+            "Micheledamo\\LaravelWebArtisan\\": "src"
         }
     },
     "scripts": {
