@@ -1,5 +1,5 @@
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+    @import url(https://fonts.googleapis.com/css?family=Inconsolata:300,700);
     #webartisan__window {
         position: fixed;
         bottom: 0;
@@ -7,13 +7,14 @@
         background-color: #FFFFFF;
         border-top: 1px solid #dddddd;
         color: #666666;
-        padding: 1rem;
-        width: calc(100% - 2rem);
+        padding: 15px;
+        width: 100%;
         min-height: 200px;
         height: 200px;
-        font: .875rem/1.6 'Inconsolata', monospace;
+        font: 16px/1.6 'Inconsolata', monospace;
         overflow-y: auto;
         cursor: text;
+        font-weight: 300;
         z-index: 9999999999999999;
     }
     #webartisan__window::-webkit-scrollbar {
@@ -37,21 +38,24 @@
     }
     #webartisan__window #webartisan__window_close_button {
         position: fixed;
-        bottom: calc(200px + 2rem);
+        bottom: 200px;
         right: 0;
-        height: 2rem;
-        line-height: 2rem;
+        height: 30px;
+        line-height: 30px;
         text-align: center;
         cursor: pointer;
         border: 1px solid #dddddd;
         border-right: 0;
-        padding: 0 1rem;
+        border-bottom: 0;
+        padding: 0 15px;
+        background-color: #FFFFFF;
     }
     #webartisan__window.webartisan__window__closed #webartisan__window_close_button {
         bottom: 0;
         padding: 0;
-        width: 2rem;
+        width: 40px;
         font-weight: 700;
+        background-color: #FFFFFF;
     }
     #webartisan__window #webartisan__window_close_button:hover,
     #webartisan__window #webartisan__window_minimize_button:hover {
@@ -70,34 +74,33 @@
     #webartisan__window .webartisan__window__command {
         display: flex;
         justify-content: flex-start;
-        height: 2rem;
+        height: 20px;
     }
     #webartisan__window .webartisan__window__command .webartisan__window__init_text {
-        line-height: 2rem;
+        line-height: 20px;
         margin-top: 0;
     }
     #webartisan__window .webartisan__window__command input {
         border: none;
         outline: none;
-        font: .875rem/1.6 'Inconsolata', monospace;
+        font: 16px/1.6 'Inconsolata', monospace;
         font-weight: 700;
         color: #222222;
         width: 100%;
-        height: 2rem;
-        line-height: 2rem;
+        height: 20px;
+        line-height: 20px;
         padding: 0;
-        margin-left: 1rem;
-        margin-right: 4rem;
+        margin-left: 15px;
         animation: blink-caret .75s step-end infinite;
     }
     #webartisan__window #webartisan__window__results {
         border: none;
         outline: none;
-        font: .875rem/1.6 'Inconsolata', monospace;
+        font: 16px/1.6 'Inconsolata', monospace;
         width: 100%;
         resize: none;
         font-weight: 700;
-        line-height: 2rem;
+        line-height: 20px;
     }
     #webartisan__window .webartisan__window__results__error {
         color: #f00 !important;
