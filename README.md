@@ -33,7 +33,7 @@ WEBARTISAN_ENABLED=true
 Simply, go to any page of your site and you will see the Web Artisan window appear at the bottom of the page.  
 Run any type of [Artisan](https://laravel.com/docs/7.x/artisan) command, even custom ones, as in a terminal shell: **et voilà**.
 
-![Usage example](images/usage.gif?raw=true "Usage example")
+> ![Usage example](images/usage.gif?raw=true "Usage example")
 
 ## Change log
 
