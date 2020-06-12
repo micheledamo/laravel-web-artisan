@@ -43,6 +43,14 @@ class WebArtisanEnabled
             catch (\ErrorException $e) {
                 return $response;
             }
+
+            if(!$this->webartisan->useAuthentication()
+                or ($this->webartisan->useAuthentication()
+                    and $request->session()->has('webartisan__authenticated'))) {
+
+                $this->webartisan->setAuthenticated();
+            }
+
             $this->webartisan->render($response);
         }
         return $response;

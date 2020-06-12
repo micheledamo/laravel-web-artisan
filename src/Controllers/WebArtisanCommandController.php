@@ -29,11 +29,17 @@ class WebArtisanCommandController extends WebArtisanBaseController
 
         if($this->command) {
             $commandPrepared = $this->prepareCommand($this->command);
-            try {
-                Artisan::call($commandPrepared);
+            if(!config('webartisan.use_authentication')
+                or (config('webartisan.use_authentication') and $this->webartisan->isAuthenticated())) {
+                    try {
+                        Artisan::call($commandPrepared);
+                    }
+                    catch(\Exception $e) {
+                        return $this->prepareResultToHtml($e->getMessage(), 'error');
+                    }
             }
-            catch(\Exception $e) {
-                return $this->prepareResultToHtml($e->getMessage(), 'error');
+            else {
+                return $this->prepareResultToHtml('Please, authenticate yourself before to start using Web Artisan.', 'error');
             }
             return $this->prepareResultToHtml(Artisan::output(), 'success');
         }

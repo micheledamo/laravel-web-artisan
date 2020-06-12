@@ -9,7 +9,7 @@ This package allows you to execute Artisan commands in a simple way using the br
 
 > This package requires Laravel 5.8 or higher.
 
-![Preview](images/laravel-web-artisan-preview.jpg?raw=true "Preview")
+![Preview](images/laravel-web-artisan-preview.jpg?raw=true&v=1.1.0 "Preview")
 
 ## Installation
 
@@ -26,12 +26,31 @@ The following line must be added in the .env file of your Laravel project to ena
 ``` bash
 WEBARTISAN_ENABLED=true
 ```
+ 
+By default Laravel Web Artisan needs an authentication before you can run commands into the window terminal.
+  
+***We recommend to always use authentication to prevent commands from being executed by anyone when the window is enabled.***
+
+``` bash
+WEBARTISAN_USERNAME=myusername
+WEBARTISAN_PASSWORD=mypassword
+```
+
+> If you want to use Web Artisan without authentication you can change *use_authentication* to *false* in the config/webartisan.php config file.
+>
+>In this case, you should publish the config/webartisan.php config file with:
+>
+>``` bash
+>php artisan vendor:publish --provider="Micheledamo\LaravelWebArtisan\LaravelWebArtisanServiceProvider"
+>```
+>
+> and than you can edit it.
 
 ## Usage
-Simply, go to any page of your site and you will see the Web Artisan window appear at the bottom of the page.  
-Run any type of [Artisan](https://laravel.com/docs/7.x/artisan) command, even custom ones, as in a terminal shell: **et voilà**.
+Simply, in any page of your site, if the Web Artisan is enabled, you will see a terminal window appear at the bottom of the page.  
+Authenticate yourself with the credentials set in the .env file, if you use Web Artisan with authentication, and run any type of [Artisan](https://laravel.com/docs/7.x/artisan) command, even custom ones, as in a terminal shell: **et voilà, the magic!**
 
-> ![Usage example](images/usage.gif?raw=true "Usage example")
+![Usage example](images/laravel-web-artisan-usage.gif?raw=true "Usage example")
 
 ## Change log
 

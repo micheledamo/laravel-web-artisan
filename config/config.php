@@ -31,12 +31,21 @@ return [
 
     /*
      |--------------------------------------------------------------------------
-     | Laravel Web Artisan route domain
+     | Laravel Web Artisan authentication
      |--------------------------------------------------------------------------
      |
-     | By default DebugBar route served from the same domain that request served.
-     | To override default domain, specify it as a non-empty value.
+     | By default Laravel Web Artisan needs an authentication before you can run
+     | commands into the window terminal.
+     |
+     | We recommend to always use authentication to prevent commands from being
+     | executed by anyone when the window is enabled.
      */
-    'route_domain' => null,
+
+    'use_authentication' => true,
+
+    'auth' => [
+        'username' => env('WEBARTISAN_USERNAME'),
+        'password' => env('WEBARTISAN_PASSWORD')
+    ],
 
 ];

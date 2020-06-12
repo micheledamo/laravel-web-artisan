@@ -24,12 +24,21 @@ class LaravelWebArtisanServiceProvider extends ServiceProvider
             'namespace' => 'Micheledamo\LaravelWebArtisan\Controllers',
             'prefix' => $this->app['config']->get('webartisan.route_prefix'),
             'domain' => $this->app['config']->get('webartisan.route_domain'),
+            'middleware' => 'web'
         ];
 
         $this->getRouter()->group($routeConfig, function($router) {
             $router->post('run', [
                 'uses' => 'WebArtisanCommandController@run',
                 'as' => 'webartisan.run',
+            ]);
+            $router->post('auth', [
+                'uses' => 'WebArtisanAuthController@auth',
+                'as' => 'webartisan.auth',
+            ]);
+            $router->post('logout', [
+                'uses' => 'WebArtisanAuthController@logout',
+                'as' => 'webartisan.logout',
             ]);
         });
 
