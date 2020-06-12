@@ -3,11 +3,10 @@
     #webartisan__window {
         position: fixed;
         bottom: 0;
-        right: 0;
         background-color: #FFFFFF;
         border-top: 1px solid #dddddd;
         color: #666666;
-        padding: 15px;
+        padding: 0;
         width: 100%;
         min-height: 200px;
         height: 200px;
@@ -75,6 +74,7 @@
         display: flex;
         justify-content: flex-start;
         height: 20px;
+        padding: 15px 15px 5px 15px;
     }
     #webartisan__window .webartisan__window__command .webartisan__window__init_text {
         line-height: 20px;
@@ -93,14 +93,25 @@
         margin-left: 15px;
         animation: blink-caret .75s step-end infinite;
     }
+    #webartisan__window #webartisan__window__loading {
+        font: 16px/1.6 'Inconsolata', monospace;
+        line-height: 20px;
+        padding: 5px 15px 15px 15px;
+        display: none;
+        justify-content: flex-start;
+        width: auto;
+    }
     #webartisan__window #webartisan__window__results {
         border: none;
         outline: none;
         font: 16px/1.6 'Inconsolata', monospace;
-        width: 100%;
         resize: none;
         font-weight: 700;
         line-height: 20px;
+        padding: 5px 15px 15px 15px;
+        display: flex;
+        justify-content: flex-start;
+        width: auto;
     }
     #webartisan__window .webartisan__window__results__error {
         color: #f00 !important;
@@ -121,6 +132,7 @@
         <label for="webartisan__window__input_command" class="webartisan__window__init_text">webartisan:/$</label>
         <input id="webartisan__window__input_command" type="text" autocomplete="off" />
     </span>
+    <span id="webartisan__window__loading">running...</span>
     <span id="webartisan__window__results"></span>
 </div>
 <script>
@@ -172,6 +184,7 @@
         // Number 13 is the "Enter" key on the keyboard
         if (event.keyCode === 13) {
             event.preventDefault();
+            document.getElementById('webartisan__window__loading').style.display = "flex";
             document.getElementById('webartisan__window__results').innerHTML = "";
             let command = this.value;
             sendCommand(command);
@@ -182,6 +195,7 @@
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState == XMLHttpRequest.DONE) {
+                document.getElementById('webartisan__window__loading').style.display = "none";
                 document.getElementById('webartisan__window__results').innerHTML = xhttp.responseText;
                 webartisan_window.scrollTop = webartisan_window.scrollHeight;
             }
